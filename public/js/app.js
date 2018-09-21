@@ -55,8 +55,9 @@ $(document).ready(function () {
                     setTimeout(function () {
                         window.location = "/dashboard"
                     }, 500);
+                } else if (result === "Invalid User") {
+                    window.location = "/"
                 } else {
-                    // $(".modalError").css("display", "flex");
                     alert(result);
                 }
             }

@@ -1,5 +1,4 @@
 require('dotenv').config();
-// console.log(process.env.FIREBASE_API)
 var express = require("express");
 var bodyParser = require("body-parser");
 const cookieParser = require('cookie-parser');
@@ -7,9 +6,7 @@ var app = express();
 var PORT = process.env.PORT || 3006;
 var session = require('express-session');
 var db = require("./models");
-
 var exphbs = require("express-handlebars");
-
 var routes = require("./controllers/controller.js")
 var external = require("./controllers/externalAPI.js")
 

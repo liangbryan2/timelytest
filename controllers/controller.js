@@ -49,7 +49,19 @@ function convertTime(minutes) {
 
 // Landing page
 router.get("/", function (req, res) {
-    res.render("index");
+    db.Users.findOne({
+        where: {
+            firebaseId: req.cookies.test.uid
+        }
+    }).then(function (result) {
+        if (result) {
+            res.redirect("/dashboard");
+            return;
+        } else {
+            res.render("index");
+            return;
+        }
+    })
 })
 
 
@@ -73,23 +85,35 @@ router.post("/login", function (req, res) {
             return firebase.auth().signInWithEmailAndPassword(req.body.email, req.body.password)
         })
         .then((user) => {
-            let uid = user.user.uid;
-            res.cookie('test', {
-                uid: uid
-            }, {
-                maxAge: 1000 * 60 * 10,
-                httpOnly: false
-            });
-            res.send('good');
-            return firebase.auth().signOut();
+            if (user) {
+                let uid = user.user.uid;
+                db.Users.findOne({
+                    where: {
+                        firebaseId: uid
+                    }
+                }).then(function (result) {
+                    if (result) {
+                        res.cookie('test', {
+                            uid: uid
+                        }, {
+                            maxAge: 1000 * 60 * 10,
+                            httpOnly: false
+                        });
+                        res.send('good');
+                        return firebase.auth().signOut();
+                    } else {
+                        res.send("Invalid User");
+                    }
+                })
+            } else {
+
+            }
         })
         .catch((err) => {
             res.send(err.code);
         });
 });
 
-
-var newUser;
 router.post("/signup", function (req, res) {
     firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE)
         .then(function () {
@@ -132,7 +156,7 @@ router.put("/logout", function (req, res) {
 //===================================================================================
 
 router.get("/dashboard/", function (req, res) {
-    // console.log(req.cookies);
+    console.log("test");
     db.Users.findOne({
         where: {
             firebaseId: req.cookies.test.uid
