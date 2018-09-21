@@ -106,7 +106,7 @@ router.post("/signup", function (req, res) {
             newUser = {
                 userName: req.body.userName,
                 name: req.body.name,
-                imgUrl: req.body.imgUrl
+                firebaseId: uid
             }
             db.Users.create({
                 newUser
