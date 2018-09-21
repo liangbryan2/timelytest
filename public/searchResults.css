@@ -1,0 +1,298 @@
+.searchBarWrap {
+    z-index: 10;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+}
+
+.searchBar {
+    width: 630px;
+    padding: 45px;
+}
+
+.searchBar input {
+    width: 100%;
+    padding: 4px;
+    border: 0;
+    background-color: white;
+    font-size: 15px
+}
+
+.searchBar .section {
+    margin: 0 auto;
+    display: flex;
+    background-color: white;
+    transition: .2s ease;
+}
+
+.searchBar .icon {
+    margin: 10px;
+}
+
+.searchResultsWrap {
+    animation: 1s fadeIn forwards;
+}
+
+.searchResultsBox {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to top,rgba(38,109,211.0), rgba(191, 217, 239, .5))
+}
+
+.searchResultsNav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+}
+
+.searchResultsNav h1 {
+    font-size: 15px;
+    font-weight: 900;
+    font-style: italic;
+    color: white;
+    padding: 10px;
+}
+
+.searchResultsNav .logo {
+    background-color: #266DD3;
+    transition: .2s ease;
+}
+
+.searchResultsNav .logo:hover {
+    background-color: #4C6085;
+}
+
+.searchResultsNav .logo:hover h1 {
+    color: white;
+}
+
+.searchResultsBox {
+    display: flex;
+    height: 100vh;
+}
+
+.srbCol1 {
+    height: 100%;
+    width: 50%;
+}
+
+.srb-largeThumb {
+    background-color: skyblue;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 5;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+}
+
+.srb-largeThumb .text {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.srb-largeThumb .text h1 {
+    font-size: 60px;
+    font-weight: 900;
+}
+
+.srb-largeThumb .largeMinutes {
+    font-size: 20px;
+}
+
+.srb-largeThumb .text h2 {
+    font-size: 30px;
+    font-weight: 900;
+    padding-top: 20px;
+}
+
+.srbCol2 {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+    /* background-image: url(img/icons-12.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; */
+}
+
+.srbCol2 .row {
+    height: 33.33vh;
+    background-color: lightgreen;
+    width: 100%;
+    display: flex;
+}
+
+.searchResultsReturn {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.searchResultThumb {
+    background-color: lightgrey;
+    height: 33.3%;
+    width: 33.3%;
+    position: relative;
+    filter: blur(0px);
+    transition: .2s ease;
+}
+
+.searchResultThumb .text {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 20px;
+    text-align: center;
+    display: none;
+}
+
+.searchResultThumb h1 {
+    font-size: 25px;
+    font-weight: 900;
+    margin: 10px 0;
+}
+
+.searchResultThumb h2 {
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.searchResultThumb:hover {
+    filter: blur(0);
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+}
+
+.searchResultThumb:hover .addToDB {
+    display: block;
+    cursor: pointer;
+    background-color: white;
+    padding: 14px 10px;
+    margin: 0 25px;
+    border-radius: 20px;
+}
+
+.searchResultThumb .addToDB h1 {
+    mix-blend-mode: normal;
+    font-size: 25px;
+}
+
+.searchResultThumb:hover .text {
+    display: flex;
+    flex-direction: column;
+}
+/* 
+.searchResultThumb-medium {
+    background-color: lightgrey;
+    height: 50%;
+    width: 50%;
+    position: relative;
+}
+
+.searchResultThumb-medium .text {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 20px;
+    text-align: right;
+}
+
+.searchResultThumb-medium .text h1 {
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.searchResultThumb-medium .text h2 {
+    font-size: 15px;
+    font-style: italic;
+}
+
+.searchResultThumb-medium:hover .addToDB {
+    display: block;
+    cursor: pointer;
+} */
+
+.green {
+    background-color: lightgreen
+}
+
+.blue {
+    background-color: lightblue
+}
+
+.orange {
+    background-color: lightcoral
+}
+
+.empty{
+    height: 35px;
+}
+
+.smallLogo {
+    font-size: 15px;
+    width: 55px;
+    color: white;
+    font-weight: 900;
+    background-color: #266DD3;
+    padding: 10px;
+    font-style: italic;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.addToDB {
+    display: none;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 20px 24px;
+    text-align: center;
+}
+
+.largeThumbSubtext {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.srb-largeThumb .text:hover #addLargetoDB {
+    display: flex;
+}
+
+#addLargetoDB {
+    display: none;
+}
+
+.srb-largeThumb .text:hover .largeMinutes{
+    display: none;    
+    background-color: white;
+    border-radius: 20px;
+}
+
+.srb-largeThumb .text:hover{
+    background-color: white;
+    border-radius: 20px;
+    padding: 25px;
+    margin: 0 20px;
+}
+
+
+
+.headerType {
+    color: white;
+    background-color: #16549E;
+    z-index: 20;
+    text-align: center;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    padding: 10px;
+    font-style: italic;
+    font-size: 20px;
+}

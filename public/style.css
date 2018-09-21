@@ -1,0 +1,326 @@
+@font-face {
+    font-family: Avenir;
+    src: url('type/AvenirNext.ttc');
+}
+
+body {
+    font-family: Avenir;
+    background-color: #e2e2e2
+}
+
+h1 {
+
+}
+
+.signInWrap {
+    width: 400px;
+    background-color: #F4F4F4;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px 40px 20px;
+    z-index: 10;
+}
+
+.signInWrap .header {
+    margin-bottom: 20px;
+    border-bottom: 3px solid black;
+    padding-bottom: 5px;
+}
+
+.signInWrap .header h1 {
+    font-size: 55px;
+    font-weight: 900;
+    color: #266DD3;
+    letter-spacing: 1px;
+}
+
+.signInWrap .header h2 {
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.signInWrap form {
+    margin: 10px 0;
+}
+
+.signInWrap .section {
+    margin: 15px 0;
+    display: flex;
+    background-color: white;
+    border-bottom: 3px solid white;
+    transition: .2s ease;
+}
+
+.signInWrap .section:hover {
+    border-bottom: 3px solid #266DD3;
+}
+
+.signInWrap input {
+    width: 100%;
+    padding: 10px;
+    border: 0;
+    background-color: white;
+    font-size: 20px
+}
+
+.signInWrap h2 {
+    margin-bottom: 10px;
+}
+
+.signInWrap .icon {
+    margin: 10.5px;
+}
+
+.icon {
+    height: 30px;
+    width: 30px;
+}
+
+.signInWrap .button {
+    padding: 17px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    width: 50%;
+    display: flex;
+    align-content: center;
+}
+
+.signInWrap h3 {
+    width: 100%;
+}
+
+#signInButtons {
+    background-color: rgba(0,0,0,0);
+    border-bottom: 0;
+    display: flex;
+}
+
+#signUp {
+    background-color: #266DD3;
+    transition: .2s ease;
+    border: 3px solid #266DD3;
+}
+
+#signUp:hover {
+    background-color: white;
+    color: #266DD3;
+    border: 3px solid #266DD3;
+    
+}
+
+#signIn {
+    background-color: #A0C2EA;
+    transition: .2s ease;
+    border: 3px solid #A0C2EA;
+}
+
+#signIn:hover {
+    background-color: white;
+    color: #266DD3;
+    border: 3px solid #266DD3;
+}
+
+.searchWrap {
+    width: 800px;
+    background-color: #F4F4F4;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    z-index: 10;
+}
+
+.searchWrap input {
+    width: 100%;
+    padding: 10px;
+    border: 0;
+    background-color: white;
+    font-size: 15px
+}
+
+.searchWrap .section {
+    margin: 15px 0;
+    display: flex;
+    background-color: white;
+    border-bottom: 3px solid white;
+    transition: .2s ease;
+}
+
+#returningSignIn {
+    background-color: #266DD3;
+    width: 100%;
+    transition: .2s ease;
+    border: 3px solid #266DD3;
+}
+
+#returningSignIn:hover {
+    background-color: white;
+    color: #266DD3;
+    border: 3px solid #266DD3;
+}
+
+.dropbtn {
+    background-color: white;
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    z-index: 1;
+    height: 0;
+    transition: .2s ease;
+    border-top: 3px solid #266DD3;
+}
+
+.dropdown-content h3 {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+}
+
+.dropdown-content h3:hover {
+    background-color: #70ACE8;
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+    flex-direction: column-reverse;
+    min-width: 100px;
+    top: -163px;
+    height: 160px;
+    color: white;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #266DD3;
+    color: white;
+}
+
+.searchWrap h1 {
+    font-size: 40px;
+    font-weight: 900;
+    color: #266DD3;
+    letter-spacing: 1px;
+}
+/* 
+#FF595E */
+
+
+@keyframes fadeIn {
+    0% {
+        transform: scale(1.5);
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1)
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        transform: scale(1);
+        opacity: 1
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(.75)
+    }
+}
+
+@keyframes hideTop {
+    80% {
+        top: 0
+    }
+
+    100% {
+        top: -80px;
+    }
+
+}
+
+.signInWallpaper2 {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    background-image: url(img/moviesedit1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@keyframes opacityOut {
+    0% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 0
+    }
+}
+
+@keyframes opacityIn {
+    0% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+#wall2 {
+    background-image: url(img/gamesedit1.jpg)
+}
+
+.modalError {
+    height: 100vh;
+    width: 100%;
+    z-index: 40;
+    display: none;
+}
+
+.modalError .text {
+    background-color: white;
+    padding: 20px;
+    border: 3px solid red;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.modalError .text h1 {
+    color: red;
+}
+
+.modalError .background {
+    height: 100vh;
+    width: 100%;
+    background-image: url(img/showsedit1.jpg);
+}
+
+.landingWrap {
+    animation: 1s fadeIn forwards;
+    height: 100vh;
+    width: 100%;
+}
+
