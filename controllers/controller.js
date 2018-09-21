@@ -49,19 +49,24 @@ function convertTime(minutes) {
 
 // Landing page
 router.get("/", function (req, res) {
-    db.Users.findOne({
-        where: {
-            firebaseId: req.cookies.test.uid
-        }
-    }).then(function (result) {
-        if (result) {
-            res.redirect("/dashboard");
-            return;
-        } else {
-            res.render("index");
-            return;
-        }
-    })
+    if (req.cookies.test.uid) {
+        db.Users.findOne({
+            where: {
+                firebaseId: req.cookies.test.uid
+            }
+        }).then(function (result) {
+            if (result) {
+                res.redirect("/dashboard");
+                return;
+            } else {
+                res.render("index");
+                return;
+            }
+        })
+    } else {
+        res.render("index");
+        return;
+    }
 })
 
 
