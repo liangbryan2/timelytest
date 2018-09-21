@@ -103,14 +103,12 @@ router.post("/signup", function (req, res) {
                 maxAge: 1000 * 60 * 10,
                 httpOnly: false
             });
-            newUser = {
+            var newUser = {
                 userName: req.body.userName,
                 name: req.body.name,
                 firebaseId: uid
             }
-            db.Users.create({
-                newUser
-            }).then(function (result) {
+            db.Users.create(newUser).then(function (result) {
                 res.send('good');
             })
             return firebase.auth().signOut();
