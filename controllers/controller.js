@@ -103,18 +103,21 @@ router.post("/signup", function (req, res) {
                 maxAge: 1000 * 60 * 10,
                 httpOnly: false
             });
-            res.send('good');
-
+            newUser = {
+                userName: req.body.userName,
+                name: req.body.name,
+                imgUrl: req.body.imgUrl
+            }
+            db.Users.create({
+                newUser
+            }).then(function (result) {
+                res.send('good');
+            })
             return firebase.auth().signOut();
         })
         .catch((err) => {
             res.send(err.code);
         });
-    newUser = {
-        userName: req.body.userName,
-        name: req.body.name,
-        imgUrl: req.body.imgUrl
-    }
 });
 
 router.put("/logout", function (req, res) {
