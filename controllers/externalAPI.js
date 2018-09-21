@@ -6,10 +6,6 @@ var db = require("../models");
 
 var router = express.Router();
 
-//TV API
-var TVMaze = require('tvmaze');
-var tvm = new TVMaze();
-
 // // Game API
 var hltb = require('howlongtobeat');
 var hltbService = new hltb.HowLongToBeatService();
@@ -18,8 +14,6 @@ var hltbService = new hltb.HowLongToBeatService();
 var books = require('google-books-search');
 
 // //Movie API
-var omdbApi = require('omdb-client');
-var omdb = require("omdb");
 const MovieDb = require('moviedb-promise')
 const moviedb = new MovieDb(process.env.MOVIEDB_API);
 
